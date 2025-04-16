@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const port = process.env.PORT || 3001;
+const port =  3001;
 const MongoConnection = require("./config/database");
 const userRoutes = require("./routes/UserRoutes");
 const freelancerRoutes = require("./routes/FreelancerRoutes");
@@ -23,7 +23,7 @@ app.use("/chat", chatRoutes);
 app.use("/ProfilePic", express.static(__dirname + "/uploads/Users_imgs"));
 app.use("/ServicePic", express.static(__dirname + "/uploads/UsersServices"));
 
-app.listen(port, (err) => {
-  if (err) console.log("Server Error :" + err.message);
-  else console.log("Server Runnig on Port: " + port);
+const PORT =  3001;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
